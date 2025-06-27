@@ -99,7 +99,7 @@ describe(df_pre)
 df_pre$media_temp_dia <- na.locf(df_pre$media_temp_dia, fromLast = TRUE, na.rm = FALSE)
 df_pre$media_umidade_dia <- na.locf(df_pre$media_umidade_dia, fromLast = TRUE, na.rm = FALSE)
 
-# Agrupando por semana
+# Agrupando por mês
 df_mensal <- df_pre %>%
   group_by(Data = floor_date(Data, "1 month")) %>% 
   summarise(contagem = sum(acumulado_not_dia),
